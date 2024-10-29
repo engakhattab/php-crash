@@ -1,60 +1,24 @@
-/* General page styling */
-body {
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
+/* Custom Table Styles */
+.custom-table-header {
+    background-color: #007bff;
+    color: white;
 }
 
-/* Center title and give a bolder appearance */
-h2 {
-    color: #2C3E50;
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.btn-outline-primary,
+.btn-outline-danger {
     font-weight: 600;
 }
 
-/* Style the button for user navigation */
-.btn-custom {
-    background-color: #17a2b8;
-    color: white;
-    font-weight: 500;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
-}
-.btn-custom:hover {
-    background-color: #138496;
-    color: white;
+/* Custom Form Styles */
+.custom-form {
+    background-color: #f8f9fa;
 }
 
-/* Custom button styles */
-button[type="submit"] {
-    margin-right: 5px;
-    font-weight: bold;
-    border-radius: 0.5rem;
-}
-
-.btn-primary { background-color: #007bff; }
-.btn-warning { background-color: #ffc107; }
-.btn-danger { background-color: #dc3545; }
-.btn-secondary { background-color: #6c757d; }
-.btn-light { background-color: #f8f9fa; color: #333; }
-
-/* Style for the form container */
-form {
-    border: 2px solid #ced4da;
-    border-radius: 0.75rem;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Table styling */
-.table {
-    border-radius: 0.5rem;
-    overflow: hidden;
-    background-color: #ffffff;
-}
-.table thead {
-    background-color: #2C3E50;
-    color: white;
-}
-.table tbody tr:hover {
-    background-color: #f2f2f2;
+.btn-primary,
+.btn-secondary {
+    width: 100px;
 }
