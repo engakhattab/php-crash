@@ -7,14 +7,14 @@
 $host = "localhost";
 $username = "abdo01"; // your MySQL username
 $password = "Aa@123"; // your MySQL password
-$dbname = "test01"; // your database name
+$db = "test01"; // your database name
 
-
-
-$conn = new mysqli($host, $username, $password, $dbname);
-
+try{
+    $conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+    echo "Connection failed. Please try again later.";
 }
 ?>

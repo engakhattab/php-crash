@@ -1,3 +1,4 @@
+<!-- new version -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +7,17 @@
     <title>Employee Records</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="container mt-5">
         <h2 class="text-center mb-4">Employee Records</h2>
         
         <?php
-        include 'db.php';
+        include 'indexLogic.php';
+        
 
-        $sql = "SELECT * FROM users";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
+        if ($result) {
             echo "
                 <div class='table-responsive'>
                     <table class='table table-hover table-bordered align-middle'>
@@ -35,7 +35,7 @@
                             </tr>
                         </thead>
                         <tbody>";
-            while($row = $result->fetch_assoc()) {
+            foreach ($result as $row) {
                 echo "
                     <tr>
                         <td>{$row['id']}</td>
@@ -58,12 +58,6 @@
                 </div>";
         } else {
             echo "<p class='text-center'>No records found.</p>";
-        }
-
-        if (isset($_GET['delete_id'])) {
-            $id = $_GET['delete_id'];
-            $conn->query("DELETE FROM users WHERE id = $id");
-            header("Location: index.php");  // Refresh page after delete
         }
         ?>
 
